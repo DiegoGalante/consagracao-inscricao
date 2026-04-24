@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Consagração a Nossa Senhora — Igreja Maristela, Paróquia Nossa Senhora do Carmo, Presidente Prudente. Entregue sua vida às mãos de Maria." />
+  <meta property="og:title" content="Consagração a Nossa Senhora — Igreja Maristela" />
+  <meta property="og:description" content="Um ato de entrega total a Jesus pelas mãos de Maria." />
+  <meta property="og:image" content="../assets/nossa-senhora-carmo.jpg" />
+  <title>Consagração a Nossa Senhora — Igreja Maristela · Presidente Prudente</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       V1 — REFINO SERENO
+       Refino do design original: SVG dourados de linha fina,
+       texturas sutis, melhor mobile, micro-interações suaves.
+       Paleta de azuis lavados com toques de creme e dourado.
+       ============================================================ */
+    :root {
+      --sky-50:  #f4f9fd;
+      --sky-100: #e6f0f9;
+      --sky-200: #cfe0ee;
+      --sky-300: #9fc3dc;
+      --sky-400: #6ba0c2;
+      --sky-500: #4581a6;
+      --sky-600: #2e6389;
+      --sky-700: #1d4966;
+      --sky-800: #14334a;
+
+      --gold:      #b8944a;
+      --gold-soft: #d4b876;
+      --gold-deep: #8a6e36;
+      --cream:     #faf6ed;
+
+      --text:      #1a2e3f;
+      --text-mid:  #40607a;
+      --text-soft: #6b8499;
+      --white:     #ffffff;
+
+      --border:    rgba(69,129,166,0.18);
+
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Manrope', sans-serif;
+
+      --radius-sm: 6px;
+      --radius:    14px;
+      --radius-lg: 22px;
+
+      --shadow-sm: 0 2px 12px rgba(29,73,102,0.06);
+      --shadow:    0 10px 40px rgba(29,73,102,0.09);
+      --shadow-lg: 0 24px 70px rgba(29,73,102,0.16);
+    }
+
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--sky-50);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-wrap: pretty;
+    }
+    img { max-width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(820px,92%); margin-inline:auto; }
+
+    /* ANIMAÇÕES */
+    @keyframes fadeUp     { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes fadeIn     { from{opacity:0;} to{opacity:1;} }
+    @keyframes spin       { to{transform:rotate(360deg);} }
+    @keyframes revealWA   { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes haloPulse  { 0%,100%{opacity:0.55;transform:scale(1);} 50%{opacity:0.75;transform:scale(1.04);} }
+
+    .anim-in   { animation:fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) both; }
+    .anim-in-d1{ animation-delay:0.1s; }
+    .anim-in-d2{ animation-delay:0.25s; }
+    .anim-in-d3{ animation-delay:0.40s; }
+    .anim-in-d4{ animation-delay:0.55s; }
+    .anim-in-d5{ animation-delay:0.70s; }
+
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* SVG ÍCONES — linha fina dourada, reutilizáveis */
+    .ico { width:1em; height:1em; stroke:currentColor; fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+
+    /* ============================================================
+       NAV — barra mínima fixa, aparece ao rolar
+       ============================================================ */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 50;
+      padding: 12px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(244,249,253,0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transform: translateY(-100%);
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), border-color 0.4s;
+    }
+    .topbar.show { transform: translateY(0); border-color: var(--border); }
+    .topbar-mark {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 600;
+      color: var(--sky-700);
+    }
+    .topbar-mark-cross { color: var(--gold); }
+    .topbar-cta {
+      padding: 8px 18px;
+      background: var(--sky-700); color: var(--white);
+      border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: background 0.25s;
+    }
+    .topbar-cta:hover { background: var(--sky-600); }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 0% 100%, rgba(212,184,118,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 80% at 100% 0%, rgba(159,195,220,0.35) 0%, transparent 70%),
+        linear-gradient(165deg, var(--sky-100) 0%, var(--sky-200) 100%);
+      overflow: hidden;
+    }
+
+    .hero-left {
+      position: relative; overflow: hidden;
+      min-height: 60svh;
+      background: linear-gradient(160deg, var(--sky-200) 0%, var(--sky-300) 100%);
+    }
+
+    /* halo dourado atrás da figura */
+    .hero-halo {
+      position: absolute;
+      width: 75%; aspect-ratio: 1;
+      top: 18%; left: 50%; transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(212,184,118,0.45) 0%, rgba(212,184,118,0.18) 35%, transparent 65%);
+      animation: haloPulse 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 20%;
+      mix-blend-mode: darken;
+      filter: contrast(1.04) saturate(1.1);
+      animation: fadeIn 1.6s ease both;
+    }
+
+    .hero-left-fade {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(207,224,238,0.85) 0%, rgba(207,224,238,0.3) 12%, transparent 30%),
+        linear-gradient(to top,    rgba(207,224,238,0.7) 0%, rgba(207,224,238,0.2) 10%, transparent 28%),
+        linear-gradient(to right,  transparent 45%, rgba(230,240,249,0.8) 80%, var(--sky-100) 100%);
+    }
+
+    .hero-right {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: clamp(48px,6%,80px) clamp(32px,6%,72px) clamp(48px,6%,80px) clamp(24px,4%,48px);
+    }
+    .hero-content { display:flex; flex-direction:column; align-items:flex-start; text-align:left; max-width:520px; }
+
+    .hero-ornament { display:flex; align-items:center; gap:10px; margin-bottom:20px; color: var(--gold); }
+    .hero-ornament-line { width:36px; height:1px; background: currentColor; }
+    .hero-ornament svg { width:14px; height:14px; }
+
+    .hero-parish-chip {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-parish-chip svg { width:13px; height:13px; color: var(--gold); }
+    .hero-parish-chip-text {
+      font-size: 0.66rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--sky-700);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 400; color: var(--sky-700);
+      line-height: 1.08; margin-bottom: 18px; letter-spacing: -0.01em;
+    }
+    .hero-title em { font-style: italic; color: var(--sky-500); font-weight: 300; }
+
+    .hero-subtitle {
+      font-size: 1.04rem; font-weight: 400;
+      color: var(--text-mid);
+      max-width: 460px; margin-bottom: 40px; line-height: 1.7;
+    }
+
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 32px;
+      background: var(--sky-700); color: var(--white);
+      border-radius: 100px;
+      font-family: var(--font-body); font-size: 0.88rem;
+      font-weight: 600; letter-spacing: 0.03em;
+      transition: all 0.3s ease; cursor: pointer;
+      box-shadow: 0 6px 20px rgba(29,73,102,0.25);
+    }
+    .hero-cta:hover { background: var(--sky-600); transform: translateY(-3px); box-shadow: 0 14px 32px rgba(29,73,102,0.3); }
+    .hero-cta svg { transition: transform 0.3s ease; width:16px; height:16px; }
+    .hero-cta:hover svg { transform: translateX(4px); }
+
+    .hero-cta-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px;
+      background: transparent; color: var(--sky-600);
+      border: 1.5px solid var(--sky-300);
+      border-radius: 100px;
+      font-family: var(--font-body); font-size: 0.88rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      transition: all 0.3s ease; cursor: pointer;
+    }
+    .hero-cta-secondary:hover { background: var(--sky-100); border-color: var(--sky-500); color: var(--sky-700); transform: translateY(-2px); }
+
+    /* ============================================================
+       SEÇÕES — header padrão
+       ============================================================ */
+    .section-about, .section-event { background: var(--white); padding: 96px 0; }
+    .section-etapas { background: var(--cream); padding: 96px 0; position: relative; }
+    .section-form { background: linear-gradient(165deg, var(--sky-100) 0%, var(--sky-200) 100%); padding: 96px 0; }
+    .section-receba { background: var(--white); padding: 88px 0; }
+
+    .section-header { text-align: center; margin-bottom: 56px; }
+
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: ''; width: 28px; height: 1px;
+      background: var(--gold); opacity: 0.55;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; color: var(--sky-700);
+      line-height: 1.16; margin-bottom: 20px; letter-spacing: -0.01em;
+    }
+    .section-title em { font-style: italic; color: var(--sky-500); }
+
+    .section-lead {
+      font-size: 1.02rem; color: var(--text-mid);
+      max-width: 600px; margin: 0 auto; line-height: 1.8;
+    }
+
+    /* about cards */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 18px; margin-top: 56px;
+    }
+    .about-card {
+      background: var(--sky-50);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 26px;
+      transition: all 0.35s ease;
+    }
+    .about-card:hover {
+      background: var(--white);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(69,129,166,0.35);
+    }
+    .about-card-icon {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+      color: var(--gold);
+    }
+    .about-card-icon svg { width: 22px; height: 22px; }
+    .about-card-label {
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px;
+    }
+    .about-card-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--sky-700); margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .about-card-text { font-size: 0.92rem; color: var(--text-mid); line-height: 1.7; }
+    .about-card-text em { font-style: italic; color: var(--sky-500); }
+
+    /* ============================================================
+       QUOTE BANNER — refinado
+       ============================================================ */
+    .quote-banner {
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%),
+        linear-gradient(135deg, var(--sky-500) 0%, var(--sky-600) 100%);
+      padding: 88px 24px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+
+    .quote-banner-mark {
+      width: 56px; height: 1px;
+      background: var(--gold-soft);
+      margin: 0 auto 28px;
+      opacity: 0.7;
+    }
+
+    .quote-content { max-width: 680px; margin: 0 auto; position: relative; }
+    .quote-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic; font-weight: 400;
+      color: var(--white); line-height: 1.45;
+      margin-bottom: 24px;
+    }
+    .quote-author {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+
+    /* ============================================================
+       ETAPAS 33 DIAS
+       ============================================================ */
+    .etapas-list { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; }
+
+    .etapa {
+      display: grid; grid-template-columns: 68px 1fr;
+      gap: 24px; padding: 28px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      align-items: flex-start;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .etapa:hover {
+      transform: translateX(4px);
+      border-color: var(--sky-400);
+      box-shadow: var(--shadow);
+    }
+    .etapa-number {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--sky-100);
+      border: 1.5px solid var(--sky-300);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--sky-600);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .etapa:hover .etapa-number {
+      background: var(--sky-600);
+      border-color: var(--sky-600);
+      color: var(--white);
+    }
+    .etapa--final .etapa-number {
+      background: var(--gold-soft);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+    .etapa--final .etapa-number svg { width: 20px; height: 20px; }
+    .etapa--final:hover .etapa-number { background: var(--gold); }
+    .etapa-content { padding-top: 6px; }
+    .etapa-days {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 6px;
+    }
+    .etapa-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--sky-700); margin-bottom: 8px; line-height: 1.3;
+    }
+    .etapa-desc { font-size: 0.94rem; color: var(--text-mid); line-height: 1.7; }
+    .etapa-desc em { font-style: italic; color: var(--sky-500); }
+
+    /* ============================================================
+       EVENTO
+       ============================================================ */
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px; margin-top: 48px;
+    }
+    .event-card {
+      background: var(--sky-50);
+      border-radius: var(--radius);
+      padding: 30px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+    .event-card-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      color: var(--gold);
+    }
+    .event-card-icon svg { width: 22px; height: 22px; }
+    .event-card-label {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-soft); margin-bottom: 8px;
+    }
+    .event-card-value {
+      font-family: var(--font-display);
+      font-size: 1.18rem; font-weight: 600;
+      color: var(--sky-700); line-height: 1.3;
+    }
+    .event-card--highlight { background: linear-gradient(160deg, rgba(212,184,118,0.16), rgba(212,184,118,0.06)); border-color: rgba(184,148,74,0.35); }
+    .event-card--highlight .event-card-icon { color: var(--gold-deep); border-color: rgba(184,148,74,0.4); }
+
+    /* ============================================================
+       FORMULÁRIO
+       ============================================================ */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: clamp(36px, 6vw, 60px);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+    .form-header { text-align: center; margin-bottom: 40px; }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block; font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 0.04em;
+      color: var(--text-mid); margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%; padding: 14px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 0.95rem;
+      color: var(--text); background: var(--sky-50);
+      transition: all 0.25s ease; outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--sky-500);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(69,129,166,0.12);
+    }
+    .form-input.error { border-color: #c0392b; }
+    .field-error { font-size: 0.78rem; color: #c0392b; margin-top: 6px; display: none; }
+    .field-error.show { display: block; }
+
+    .btn-submit {
+      width: 100%; padding: 16px;
+      background: var(--sky-700); color: var(--white);
+      border: none; border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 0.92rem;
+      font-weight: 600; letter-spacing: 0.04em;
+      cursor: pointer; transition: all 0.3s ease;
+      margin-top: 8px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 8px 24px rgba(29,73,102,0.25);
+    }
+    .btn-submit:hover:not(:disabled) {
+      background: var(--sky-600);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(29,73,102,0.3);
+    }
+    .btn-submit:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-top-color: white; border-radius: 50%;
+      animation: spin 0.8s linear infinite; display: none;
+    }
+
+    .form-message {
+      border-radius: var(--radius-sm);
+      padding: 16px 20px; font-size: 0.92rem;
+      margin-top: 20px; display: none;
+    }
+    .form-message.success { background: #f0f9f4; border: 1px solid #8cc9a3; color: #1d6f3e; display: block; }
+    .form-message.error-msg { background: #fdf3f2; border: 1px solid #e07b74; color: #8b2a24; display: block; }
+
+    .whatsapp-section {
+      display: none; text-align: center;
+      margin-top: 32px; padding: 28px;
+      background: linear-gradient(135deg, #e8f8ef, #d4f2e0);
+      border-radius: var(--radius);
+    }
+    .whatsapp-section.show { display: block; animation: revealWA 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+    .whatsapp-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: #1d6f3e; margin-bottom: 14px;
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #25d366, #1abe5c);
+      color: white; border-radius: 100px;
+      font-family: var(--font-body); font-size: 0.94rem; font-weight: 600;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.35);
+      transition: all 0.3s ease;
+    }
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(37,211,102,0.45); }
+    .btn-whatsapp svg { width: 22px; height: 22px; }
+
+    /* ============================================================
+       RECEBA — o que você recebe ao se inscrever
+       ============================================================ */
+    .receba-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px; margin-top: 48px;
+    }
+    .receba-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 22px;
+      border-left: 2px solid var(--gold);
+      background: var(--sky-50);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .receba-item-ico {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      color: var(--gold-deep);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .receba-item-ico svg { width: 22px; height: 22px; }
+    .receba-item-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--sky-700); margin-bottom: 4px;
+    }
+    .receba-item-desc { font-size: 0.86rem; color: var(--text-mid); line-height: 1.55; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--sky-700);
+      padding: 56px 24px 36px;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-mark {
+      font-family: var(--font-display);
+      font-size: 1.8rem; font-style: italic;
+      color: var(--gold-soft);
+      opacity: 0.9; margin-bottom: 14px;
+    }
+    .footer-divider {
+      width: 56px; height: 1px;
+      background: var(--gold-soft);
+      opacity: 0.4;
+      margin: 18px auto;
+    }
+    .footer-text {
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+    }
+    .footer-text strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+    .footer-meta {
+      margin-top: 16px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ============================================================
+       FAB — Inscrever-se flutuante (mobile)
+       ============================================================ */
+    .fab {
+      display: none;
+      position: fixed; bottom: 18px; left: 50%;
+      transform: translateX(-50%) translateY(120%);
+      z-index: 40;
+      padding: 14px 28px;
+      background: var(--sky-700); color: white;
+      border-radius: 100px;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 12px 32px rgba(29,73,102,0.45);
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fab.show { transform: translateX(-50%) translateY(0); }
+
+    /* ============================================================
+       RESPONSIVO
+       ============================================================ */
+    @media (max-width: 740px) {
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 56svh auto;
+      }
+      .hero-left { min-height: auto; }
+      .hero-img { object-position: center 15%; }
+      .hero-left-fade {
+        background:
+          linear-gradient(to bottom, rgba(207,224,238,0.55) 0%, transparent 18%),
+          linear-gradient(to top, var(--sky-100) 0%, rgba(207,224,238,0.7) 25%, transparent 55%);
+      }
+      .hero-right { padding: 40px 24px 64px; }
+      .hero-content { align-items: center; text-align: center; }
+      .hero-subtitle { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .fab { display: block; }
+      .topbar-mark-text { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .form-card { padding: 28px 20px; }
+      .etapa { grid-template-columns: 48px 1fr; gap: 16px; padding: 22px; }
+      .etapa-number { width: 44px; height: 44px; font-size: 1.2rem; }
+      .section-about, .section-etapas, .section-event, .section-form, .section-receba { padding: 72px 0; }
+      .quote-banner { padding: 64px 20px; }
+      .receba-item { padding: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 3v18M5 9h14"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.39 5.96L20 9.6l-4.5 4.05L16.8 20 12 16.9 7.2 20l1.3-6.35L4 9.6l5.61-.64L12 3z"/></symbol>
+      <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M4 6c0-1.1.9-2 2-2h11l3 3v11c0 1.1-.9 2-2 2h-12c-1.1 0-2-.9-2-2V6z"/><path d="M14 4v4h4"/><path d="M8 12h7M8 16h5"/></symbol>
+      <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 18h18l-1.5-9-4.5 4-3-6-3 6L4.5 9 3 18z"/><path d="M3 21h18"/></symbol>
+      <symbol id="i-dove" viewBox="0 0 24 24"><path d="M21 6c-1 4-4 7-8 7-2 0-4-1-5-2-1 2-2 3-4 3 1-1 1-3 1-5 0-4 3-7 7-7 3 0 5 1 6 2"/><path d="M14 13l-1 4 3-2"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 4l1.5 5.5L19 11l-5.5 1.5L12 18l-1.5-5.5L5 11l5.5-1.5L12 4z"/><path d="M19 18l.7 1.8L21 20l-1.3.5L19 22l-.7-1.8L17 20l1.3-.5L19 18z"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 13h18M12 9v12"/><path d="M8 9c-2 0-3-3 0-3 2 0 4 3 4 3s2-3 4-3c3 0 2 3 0 3"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c0-1 1-2 2-2h12c1 0 2 1 2 2v15c0 .5-.5 1-1 1h-13c-1 0-2-1-2-2V5z"/><path d="M8 7h8M8 11h8M8 15h6"/></symbol>
+      <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15 15c4 0 6 2 6 5"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10c0-3 2-5 5-5 1.5 0 3 1 3 1s1.5-1 3-1c3 0 5 2 5 5 0 5.5-7 10-9 10z"/></symbol>
+      <symbol id="i-rosary" viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.5"/><circle cx="8.5" cy="8.5" r="1"/><circle cx="15.5" cy="8.5" r="1"/><circle cx="6.5" cy="12" r="1"/><circle cx="17.5" cy="12" r="1"/><circle cx="8" cy="15.5" r="1"/><circle cx="16" cy="15.5" r="1"/><path d="M12 18v3M11 21h2"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- TOP BAR -->
+  <nav class="topbar" id="topbar" aria-label="Barra de navegação">
+    <a href="#inicio" class="topbar-mark">
+      <svg class="ico topbar-mark-cross" aria-hidden="true"><use href="#i-cross"/></svg>
+      <span class="topbar-mark-text">Consagração · Maristela</span>
+    </a>
+    <a href="#inscricao" class="topbar-cta">Inscrever-se</a>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="hero-left">
+      <div class="hero-halo" aria-hidden="true"></div>
+      <img class="hero-img" src="../assets/nossa-senhora-carmo.jpg" alt="Imagem de Nossa Senhora do Carmo com o Menino Jesus" />
+      <div class="hero-left-fade" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-content">
+
+        <div class="hero-ornament anim-in" aria-hidden="true">
+          <span class="hero-ornament-line"></span>
+          <svg class="ico"><use href="#i-star"/></svg>
+          <span class="hero-ornament-line"></span>
+        </div>
+
+        <div class="hero-parish-chip anim-in anim-in-d1">
+          <svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg>
+          <span class="hero-parish-chip-text">Igreja Maristela · Pres. Prudente</span>
+        </div>
+
+        <p class="hero-eyebrow anim-in anim-in-d2">Um ato de entrega e amor</p>
+
+        <h1 class="hero-title anim-in anim-in-d3">
+          Consagração a<br/><em>Nossa Senhora</em>
+        </h1>
+
+        <p class="hero-subtitle anim-in anim-in-d4">
+          Entregue sua vida às mãos de Maria e deixe
+          que ela a conduza ao coração de Jesus.
+        </p>
+
+        <div class="hero-actions anim-in anim-in-d5">
+          <a href="#sobre" class="hero-cta-secondary">Saiba mais</a>
+          <a href="#inscricao" class="hero-cta">
+            Quero me consagrar
+            <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       O QUE É
+       ============================================================ -->
+  <section class="section-about" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal">O que é</p>
+        <h2 class="section-title reveal">Um ato de entrega total<br/>a Jesus, <em>pelas mãos de Maria</em></h2>
+        <p class="section-lead reveal">
+          A Consagração a Nossa Senhora é um compromisso espiritual profundo.
+          Não se trata de uma devoção passageira, mas de um ato consciente de
+          entregar a própria vida às mãos de Maria, para que ela a conduza
+          ao coração de seu Filho Jesus.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-scroll"/></svg></div>
+          <p class="about-card-label">Origem</p>
+          <h3 class="about-card-title">Devoção milenar</h3>
+          <p class="about-card-text">
+            Sistematizada no séc. XVII por São Luís Maria Grignion de Montfort
+            no <em>Tratado da Verdadeira Devoção à Santíssima Virgem</em>.
+          </p>
+        </div>
+
+        <div class="about-card reveal" style="transition-delay:.08s">
+          <div class="about-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-crown"/></svg></div>
+          <p class="about-card-label">Nossa Senhora do Carmo</p>
+          <h3 class="about-card-title">Padroeira do Carmelo</h3>
+          <p class="about-card-text">
+            Celebrada em 16 de julho. Representada com o Menino Jesus e o
+            escapulário — sinal visível de consagração e proteção maternal.
+          </p>
+        </div>
+
+        <div class="about-card reveal" style="transition-delay:.16s">
+          <div class="about-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-dove"/></svg></div>
+          <p class="about-card-label">O que muda</p>
+          <h3 class="about-card-title">Uma aliança de amor</h3>
+          <p class="about-card-text">
+            O consagrado se coloca inteiramente a serviço de Deus pelas mãos
+            de Maria, que intercede e ampara nas lutas diárias.
+          </p>
+        </div>
+
+        <div class="about-card reveal" style="transition-delay:.24s">
+          <div class="about-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg></div>
+          <p class="about-card-label">Para quem é</p>
+          <h3 class="about-card-title">Para todo batizado</h3>
+          <p class="about-card-text">
+            Para quem nunca se consagrou — e também para quem já é consagrado
+            e deseja renovar anualmente a aliança com Nossa Senhora.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITAÇÃO 1 -->
+  <div class="quote-banner">
+    <div class="quote-content">
+      <div class="quote-banner-mark"></div>
+      <blockquote class="quote-text reveal">
+        É pela Santíssima Virgem Maria que Jesus Cristo veio ao mundo,
+        e é também por ela que Ele deve reinar no mundo.
+      </blockquote>
+      <p class="quote-author reveal">São Luís Maria Grignion de Montfort</p>
+    </div>
+  </div>
+
+  <!-- ETAPAS -->
+  <section class="section-etapas" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal">A preparação</p>
+        <h2 class="section-title reveal">33 dias de <em>caminho espiritual</em></h2>
+        <p class="section-lead reveal">
+          A preparação tem início em <strong>16 de junho</strong> e se estende por 33 dias
+          de oração e aprofundamento espiritual. O ato solene de Consagração será
+          celebrado no <strong>16 de julho</strong>, Festa de Nossa Senhora do Carmo —
+          data especialmente escolhida para esse momento de entrega a Maria.
+        </p>
+      </div>
+
+      <div class="etapas-list">
+        <div class="etapa reveal">
+          <div class="etapa-number">1</div>
+          <div class="etapa-content">
+            <p class="etapa-days">Dias 1 a 12</p>
+            <h3 class="etapa-title">Desapego do espírito do mundo</h3>
+            <p class="etapa-desc">
+              Período de exame de consciência e purificação. O fiel reconhece
+              os apegos que o distanciam de Deus e abre o coração para a
+              ação da graça. Orações: <em>Veni Creator</em> e <em>Ave Maris Stella</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="etapa reveal">
+          <div class="etapa-number">2</div>
+          <div class="etapa-content">
+            <p class="etapa-days">Dias 13 a 19</p>
+            <h3 class="etapa-title">Conhecimento de si mesmo</h3>
+            <p class="etapa-desc">
+              Semana de autoconhecimento espiritual. O fiel reconhece a própria
+              fragilidade e a necessidade da graça divina, recitando a
+              Ladainha de Nossa Senhora.
+            </p>
+          </div>
+        </div>
+
+        <div class="etapa reveal">
+          <div class="etapa-number">3</div>
+          <div class="etapa-content">
+            <p class="etapa-days">Dias 20 a 26</p>
+            <h3 class="etapa-title">Conhecimento de Nossa Senhora</h3>
+            <p class="etapa-desc">
+              Semana dedicada a conhecer mais profundamente Maria — sua vida,
+              virtudes e papel na história da salvação. O devoto aprende a
+              ver em Maria o caminho mais seguro para chegar a Jesus.
+            </p>
+          </div>
+        </div>
+
+        <div class="etapa reveal">
+          <div class="etapa-number">4</div>
+          <div class="etapa-content">
+            <p class="etapa-days">Dias 27 a 33</p>
+            <h3 class="etapa-title">Conhecimento de Jesus Cristo</h3>
+            <p class="etapa-desc">
+              Semana final. O olhar se volta para Jesus, razão última da
+              consagração. Ao final, o fiel se confessa e comunga com a
+              intenção de se entregar a Cristo pelas mãos de Maria.
+            </p>
+          </div>
+        </div>
+
+        <div class="etapa etapa--final reveal">
+          <div class="etapa-number"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg></div>
+          <div class="etapa-content">
+            <p class="etapa-days">34º Dia</p>
+            <h3 class="etapa-title">O Ato de Consagração</h3>
+            <p class="etapa-desc">
+              Em uma festa mariana, o fiel pronuncia solenemente o Ato de
+              Consagração. É o momento de dizer seu <em>"sim"</em> definitivo,
+              assim como Maria disse ao Anjo: <em>"Faça-se em mim segundo a tua palavra"</em> (Lc 1,38).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITAÇÃO 2 -->
+  <div class="quote-banner">
+    <div class="quote-content">
+      <div class="quote-banner-mark"></div>
+      <blockquote class="quote-text reveal">
+        O escapulário do Carmo, mais do que devoção, chama-nos à intimidade.
+        Quem vive perto de Nossa Senhora, invariavelmente vive perto de Jesus.
+      </blockquote>
+      <p class="quote-author reveal">Padre Carmelita — Canção Nova</p>
+    </div>
+  </div>
+
+  <!-- DETALHES DO EVENTO -->
+  <section class="section-event" id="evento">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal">O encontro</p>
+        <h2 class="section-title reveal">Detalhes <em>do evento</em></h2>
+        <p class="section-lead reveal">
+          A Igreja Maristela organiza este momento para reunir todos os que
+          desejam iniciar ou renovar sua Consagração a Nossa Senhora. O ato solene
+          acontecerá na Paróquia Nossa Senhora do Carmo, em Presidente Prudente,
+          conduzido pelo padre da paróquia, com orientação espiritual e oração comunitária.
+        </p>
+      </div>
+
+      <div class="event-grid">
+        <div class="event-card reveal">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></div>
+          <p class="event-card-label">Início da preparação</p>
+          <p class="event-card-value">16 de Junho<br/>de 2026</p>
+        </div>
+        <div class="event-card event-card--highlight reveal" style="transition-delay:.08s">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg></div>
+          <p class="event-card-label">Dia da Consagração</p>
+          <p class="event-card-value">16 de Julho<br/>de 2026</p>
+        </div>
+        <div class="event-card reveal" style="transition-delay:.16s">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></div>
+          <p class="event-card-label">Local</p>
+          <p class="event-card-value" id="txt-local">Salão Paroquial</p>
+        </div>
+        <div class="event-card reveal" style="transition-delay:.24s">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg></div>
+          <p class="event-card-label">Entrada</p>
+          <p class="event-card-value">Gratuita<br/>Vagas limitadas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="section-form" id="inscricao">
+    <div class="container">
+      <div class="form-card reveal">
+        <div class="form-header">
+          <p class="section-eyebrow">Inscrição</p>
+          <h2 class="section-title">Quero me <em>consagrar</em></h2>
+          <p class="section-lead">
+            Preencha os dados para garantir seu lugar. Após a confirmação,
+            você receberá acesso ao grupo de WhatsApp com todas as orientações
+            e a preparação dos 33 dias.
+          </p>
+        </div>
+
+        <form id="formInscricao" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="nome">Nome Completo</label>
+            <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required />
+            <span class="field-error" id="err-nome">Por favor, informe seu nome.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="telefone">Telefone / WhatsApp</label>
+            <input class="form-input" type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel" required />
+            <span class="field-error" id="err-tel">Informe um telefone válido.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required />
+            <span class="field-error" id="err-email">Informe um e-mail válido.</span>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btnSubmit">
+            <span id="btnText">Confirmar Inscrição</span>
+            <span class="spinner" id="spinner"></span>
+          </button>
+        </form>
+
+        <div class="form-message success" id="msgSuccess" role="alert" style="display:none;">
+          ✓ Inscrição realizada com sucesso! Bem-vindo(a) ao encontro.
+        </div>
+        <div class="form-message error-msg" id="msgError" role="alert" style="display:none;"></div>
+
+        <div class="whatsapp-section" id="whatsappSection">
+          <p class="whatsapp-label">Próximo passo — entre no grupo</p>
+          <a href="#" class="btn-whatsapp" target="_blank" rel="noopener" id="btnWhatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Entrar no Grupo do WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="section-receba">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal">Ao se inscrever</p>
+        <h2 class="section-title reveal">O que você <em>recebe</em></h2>
+      </div>
+
+      <div class="receba-grid">
+        <div class="receba-item reveal">
+          <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-people"/></svg></div>
+          <div>
+            <h3 class="receba-item-title">Grupo no WhatsApp</h3>
+            <p class="receba-item-desc">Acesso ao grupo da preparação com avisos, orações diárias e suporte da paróquia.</p>
+          </div>
+        </div>
+
+        <div class="receba-item reveal" style="transition-delay:.08s">
+          <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg></div>
+          <div>
+            <h3 class="receba-item-title">Material dos 33 dias</h3>
+            <p class="receba-item-desc">Roteiro de orações e meditações para acompanhar cada uma das 4 semanas de preparação.</p>
+          </div>
+        </div>
+
+        <div class="receba-item reveal" style="transition-delay:.16s">
+          <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></div>
+          <div>
+            <h3 class="receba-item-title">Orientação espiritual</h3>
+            <p class="receba-item-desc">Acompanhamento durante toda a jornada com encontros e momentos de oração comunitária.</p>
+          </div>
+        </div>
+
+        <div class="receba-item reveal" style="transition-delay:.24s">
+          <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-rosary"/></svg></div>
+          <div>
+            <h3 class="receba-item-title">Escapulário do Carmo</h3>
+            <p class="receba-item-desc">Imposição do escapulário no dia da consagração — sinal visível da entrega a Maria.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-mark">Ave Maria</p>
+    <div class="footer-divider"></div>
+    <p class="footer-text">
+      <strong>Igreja Maristela</strong><br/>
+      Paróquia Nossa Senhora do Carmo · Presidente Prudente
+    </p>
+    <p class="footer-meta">© 2026 · Feito com devoção</p>
+  </footer>
+
+  <a href="#inscricao" class="fab" id="fab">Quero me consagrar</a>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    const CONFIG = {
+      FORM_ID:        '1FAIpQLSdemaICF42c4xz_QFE88t1YoHxmYrK9ue8XnY8gXvrM9HbPcw',
+      ENTRY_NOME:     'entry.429074763',
+      ENTRY_TELEFONE: 'entry.2126048536',
+      ENTRY_EMAIL:    'entry.317207993',
+      WHATSAPP_LINK:  'https://chat.whatsapp.com/Dti0kkHvxHoKTjXNCrWsoK',
+      LOCAL:   'Salão Paroquial',
+    };
+
+    const FORMS_ACTION = `https://docs.google.com/forms/d/e/${CONFIG.FORM_ID}/formResponse`;
+    document.getElementById('txt-local').innerHTML = CONFIG.LOCAL;
+
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Topbar + FAB on scroll
+    const topbar = document.getElementById('topbar');
+    const fab = document.getElementById('fab');
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 600) { topbar.classList.add('show'); fab.classList.add('show'); }
+      else { topbar.classList.remove('show'); fab.classList.remove('show'); }
+      lastY = y;
+    }, { passive: true });
+
+    // Hide FAB when form section is in view
+    const formSection = document.getElementById('inscricao');
+    const fabObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) fab.classList.remove('show');
+      });
+    }, { threshold: 0.15 });
+    fabObs.observe(formSection);
+
+    // Máscara telefone
+    document.getElementById('telefone').addEventListener('input', function () {
+      let v = this.value.replace(/\D/g,'').slice(0,11);
+      if      (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
+      else if (v.length > 6)  v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
+      else if (v.length > 2)  v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
+      this.value = v;
+    });
+
+    function showError(id, mid) {
+      document.getElementById(id).classList.add('error');
+      document.getElementById(mid).classList.add('show');
+    }
+    function clearError(id, mid) {
+      document.getElementById(id).classList.remove('error');
+      document.getElementById(mid).classList.remove('show');
+    }
+    function validateForm() {
+      let ok = true;
+      const nome  = document.getElementById('nome');
+      const tel   = document.getElementById('telefone');
+      const email = document.getElementById('email');
+      if (nome.value.trim().length < 3)                            { showError('nome','err-nome'); ok = false; } else clearError('nome','err-nome');
+      if (tel.value.replace(/\D/g,'').length < 10)                 { showError('telefone','err-tel'); ok = false; } else clearError('telefone','err-tel');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()))  { showError('email','err-email'); ok = false; } else clearError('email','err-email');
+      return ok;
+    }
+
+    document.getElementById('formInscricao').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      document.getElementById('msgSuccess').style.display = 'none';
+      document.getElementById('msgError').style.display   = 'none';
+      if (!validateForm()) return;
+
+      const btn = document.getElementById('btnSubmit');
+      const btnText = document.getElementById('btnText');
+      const spinner = document.getElementById('spinner');
+      btn.disabled = true;
+      btnText.textContent = 'Enviando...';
+      spinner.style.display = 'block';
+
+      const body = new URLSearchParams();
+      body.append(CONFIG.ENTRY_NOME,     document.getElementById('nome').value.trim());
+      body.append(CONFIG.ENTRY_TELEFONE, document.getElementById('telefone').value.trim());
+      body.append(CONFIG.ENTRY_EMAIL,    document.getElementById('email').value.trim());
+
+      try {
+        await fetch(FORMS_ACTION, {
+          method: 'POST', mode: 'no-cors',
+          headers:{ 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString(),
+        });
+        onSuccess();
+      } catch (err) {
+        console.error(err);
+        onError('Sem conexão. Verifique sua internet e tente novamente.');
+      }
+    });
+
+    function onSuccess() {
+      document.getElementById('msgSuccess').style.display = 'block';
+      document.getElementById('formInscricao').style.display = 'none';
+      document.getElementById('btnWhatsapp').href = CONFIG.WHATSAPP_LINK;
+      document.getElementById('whatsappSection').classList.add('show');
+      setTimeout(() => {
+        document.getElementById('whatsappSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 400);
+    }
+
+    function onError(msg) {
+      const el = document.getElementById('msgError');
+      el.textContent = msg || 'Erro ao enviar. Tente novamente.';
+      el.style.display = 'block';
+      document.getElementById('btnSubmit').disabled = false;
+      document.getElementById('btnText').textContent = 'Confirmar Inscrição';
+      document.getElementById('spinner').style.display = 'none';
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
