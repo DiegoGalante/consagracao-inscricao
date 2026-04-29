@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Consagração a Nossa Senhora — Consagra-te TTM. Totus Tuus. Entregue sua vida às mãos de Maria." />
-  <meta property="og:title" content="Consagração a Nossa Senhora — Consagra-te TTM" />
+  <meta name="description" content="Consagração a Nossa Senhora — Igreja Maristela, Paróquia Nossa Senhora do Carmo, Presidente Prudente. Entregue sua vida às mãos de Maria." />
+  <meta property="og:title" content="Consagração a Nossa Senhora — Igreja Maristela" />
   <meta property="og:description" content="Um ato de entrega total a Jesus pelas mãos de Maria." />
   <meta property="og:image" content="../assets/nossa-senhora-carmo.jpg" />
-  <title>Consagração a Nossa Senhora — Consagra-te TTM</title>
+  <title>Consagração a Nossa Senhora — Igreja Maristela · Presidente Prudente</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -141,44 +141,42 @@
     .hero-left {
       position: relative; overflow: hidden;
       min-height: 60svh;
-      display: flex; align-items: center; justify-content: center;
-      padding: clamp(40px,6vw,80px);
-      background: linear-gradient(160deg, var(--sky-100) 0%, var(--sky-200) 100%);
+      background: linear-gradient(160deg, var(--sky-200) 0%, var(--sky-300) 100%);
     }
 
-    /* halo dourado atrás da logo */
+    /* halo dourado atrás da figura */
     .hero-halo {
       position: absolute;
-      width: 70%; aspect-ratio: 1;
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      background: radial-gradient(circle, rgba(212,184,118,0.55) 0%, rgba(212,184,118,0.18) 40%, transparent 70%);
+      width: 75%; aspect-ratio: 1;
+      top: 18%; left: 50%; transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(212,184,118,0.45) 0%, rgba(212,184,118,0.18) 35%, transparent 65%);
       animation: haloPulse 7s ease-in-out infinite;
       pointer-events: none;
-      filter: blur(4px);
     }
 
     .hero-img {
-      position: relative;
-      z-index: 1;
-      max-width: min(440px, 90%);
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 12px 40px rgba(31,72,102,0.18));
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 20%;
+      mix-blend-mode: darken;
+      filter: contrast(1.04) saturate(1.1);
       animation: fadeIn 1.6s ease both;
     }
 
-    .hero-left-fade { display: none; }
+    .hero-left-fade {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(207,224,238,0.85) 0%, rgba(207,224,238,0.3) 12%, transparent 30%),
+        linear-gradient(to top,    rgba(207,224,238,0.7) 0%, rgba(207,224,238,0.2) 10%, transparent 28%),
+        linear-gradient(to right,  transparent 45%, rgba(230,240,249,0.8) 80%, var(--sky-100) 100%);
+    }
 
     .hero-right {
       position: relative; z-index: 2;
       display: flex; flex-direction: column; justify-content: center;
       padding: clamp(48px,6%,80px) clamp(32px,6%,72px) clamp(48px,6%,80px) clamp(24px,4%,48px);
     }
-    .hero-content { display:flex; flex-direction:column; align-items:center; text-align:center; max-width:560px; margin: 0 auto; }
-    .hero-content .hero-pills { justify-content: center; }
-    .hero-content .hero-actions { justify-content: center; }
-    .hero-content .hero-subtitle { max-width: 100%; }
+    .hero-content { display:flex; flex-direction:column; align-items:flex-start; text-align:left; max-width:520px; }
 
     .hero-ornament { display:flex; align-items:center; gap:10px; margin-bottom:20px; color: var(--gold); }
     .hero-ornament-line { width:36px; height:1px; background: currentColor; }
@@ -214,17 +212,6 @@
       line-height: 1.08; margin-bottom: 18px; letter-spacing: -0.01em;
     }
     .hero-title em { font-style: italic; color: var(--sky-500); font-weight: 300; }
-    .hero-method {
-      font-family: var(--font-display, 'Cormorant Garamond', serif);
-      font-style: italic;
-      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-      color: var(--gold, #c79f4f);
-      margin-bottom: 18px;
-      letter-spacing: 0.01em;
-      line-height: 1.4;
-      opacity: 0.92;
-    }
-
 
     .hero-subtitle {
       font-size: 1.04rem; font-weight: 400;
@@ -233,29 +220,6 @@
     }
 
     .hero-actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
-
-    .hero-pills {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      margin-bottom: 32px;
-      justify-content: center;
-      align-self: center;
-    }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 16px;
-      background: linear-gradient(135deg, rgba(212,184,118,0.18), rgba(212,184,118,0.08));
-      border: 1px solid rgba(212,184,118,0.45);
-      border-radius: 100px;
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--gold);
-    }
-    .hero-pill svg { width: 14px; height: 14px; }
-    .hero-pill:first-child {
-      background: linear-gradient(135deg, rgba(212,184,118,0.35), rgba(212,184,118,0.15));
-      color: #8e6d36;
-      border-color: rgba(212,184,118,0.6);
-    }
 
     .hero-cta {
       display: inline-flex; align-items: center; gap: 10px;
@@ -320,7 +284,7 @@
     /* about cards */
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 18px; margin-top: 56px;
     }
     .about-card {
@@ -452,76 +416,46 @@
     /* ============================================================
        EVENTO
        ============================================================ */
-    .event-pillar {
-      max-width: 740px;
-      margin-inline: auto;
-      text-align: center;
-      padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 56px);
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px; margin-top: 48px;
     }
-    .event-pillar-eyebrow {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--gold-deep);
-      margin-bottom: 22px;
-    }
-    .event-pillar-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 400;
-      line-height: 1.08;
-      color: var(--sky-700);
-      letter-spacing: -0.018em;
-      margin: 0 0 32px;
-    }
-    .event-pillar-title em {
-      font-style: italic;
-      color: var(--gold-deep);
-    }
-    .event-pillar-rule {
-      width: 80px; height: 1px;
-      background: var(--gold);
-      margin: 0 auto 36px;
-      opacity: 0.7;
-    }
-    .event-pillar-text {
-      font-size: clamp(1.05rem, 1.6vw, 1.18rem);
-      line-height: 1.78;
-      color: var(--text-mid);
-      max-width: 580px;
-      margin: 0 auto 18px;
-    }
-    .event-pillar-text:last-of-type { margin-bottom: 0; }
-    .event-pillar-text strong { color: var(--sky-700); font-weight: 600; }
-    .event-pillar-text em {
-      font-style: italic;
-      color: var(--gold-deep);
-      font-weight: 500;
-    }
-    .event-pillar-tags {
-      display: flex; flex-wrap: wrap;
-      gap: 10px; justify-content: center;
-      margin-top: 40px;
-    }
-    .event-pillar-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 9px 16px;
-      border-radius: 999px;
+    .event-card {
       background: var(--sky-50);
-      border: 1px solid rgba(184,148,74,0.22);
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--sky-700);
-      letter-spacing: 0.02em;
+      border-radius: var(--radius);
+      padding: 30px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
     }
-    .event-pillar-tag svg {
-      width: 15px; height: 15px;
-      color: var(--gold-deep);
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      background: var(--white);
     }
-    @media (max-width: 600px) {
-      .event-pillar { padding: 16px 0 0; }
-      .event-pillar-tag { padding: 8px 13px; font-size: 0.74rem; }
+    .event-card-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      color: var(--gold);
     }
+    .event-card-icon svg { width: 22px; height: 22px; }
+    .event-card-label {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-soft); margin-bottom: 8px;
+    }
+    .event-card-value {
+      font-family: var(--font-display);
+      font-size: 1.18rem; font-weight: 600;
+      color: var(--sky-700); line-height: 1.3;
+    }
+    .event-card--highlight { background: linear-gradient(160deg, rgba(212,184,118,0.16), rgba(212,184,118,0.06)); border-color: rgba(184,148,74,0.35); }
+    .event-card--highlight .event-card-icon { color: var(--gold-deep); border-color: rgba(184,148,74,0.4); }
 
     /* ============================================================
        FORMULÁRIO
@@ -618,7 +552,7 @@
        ============================================================ */
     .receba-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 16px; margin-top: 48px;
     }
     .receba-item {
@@ -641,29 +575,6 @@
       color: var(--sky-700); margin-bottom: 4px;
     }
     .receba-item-desc { font-size: 0.86rem; color: var(--text-mid); line-height: 1.55; }
-
-    /* Card-link clicável (download do manual) */
-    .receba-item--link {
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-    }
-    .receba-item--link:hover {
-      transform: translateY(-2px);
-      background: var(--sky-50, #f3f8fc);
-      box-shadow: 0 10px 24px rgba(29,73,102,0.10);
-    }
-    .receba-item--link .receba-item-cta {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--sky-700);
-      transition: transform 0.25s ease;
-    }
-    .receba-item--link:hover .receba-item-cta { transform: translateX(4px); }
 
     /* ============================================================
        FOOTER
@@ -737,7 +648,6 @@
       .hero-actions { justify-content: center; }
       .fab { display: block; }
       .topbar-mark-text { display: none; }
-      .footer { padding-bottom: 110px; }
     }
 
     @media (max-width: 480px) {
@@ -752,269 +662,6 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
-    /* SOBRE O GRUPO — prose */
-    .section-grupo--clean {
-      background: linear-gradient(180deg, var(--sky-50, #f4f9fd) 0%, var(--white, #fff) 100%);
-      padding: clamp(80px, 12vh, 130px) 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .section-grupo--clean::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 50%; transform: translateX(-50%);
-      width: 200px; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(212,184,118,0.5), transparent);
-    }
-    .grupo-prose {
-      max-width: 640px;
-      margin: 12px auto 0;
-      font-size: 1.04rem;
-      line-height: 1.85;
-      color: var(--text-mid);
-      text-align: center;
-    }
-    .grupo-prose p { margin-bottom: 18px; }
-    .grupo-prose p:last-child { margin-bottom: 0; }
-    .grupo-prose em { font-style: italic; color: var(--gold); font-weight: 500; }
-    .grupo-prose strong { font-weight: 600; color: var(--sky-700); }
-
-  
-    /* LIVROS — V1 Refino Sereno (agora ANTES das etapas) */
-    .livros-block {
-      margin-bottom: clamp(50px, 7vw, 80px);
-      padding-bottom: clamp(50px, 7vw, 80px);
-      border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
-    }
-    .livros-header { text-align: center; margin-bottom: 48px; }
-    .livros-eyebrow {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--gold, #d4b876); margin-bottom: 14px;
-      display: inline-flex; align-items: center; gap: 12px;
-    }
-    .livros-eyebrow::before, .livros-eyebrow::after {
-      content: ''; width: 24px; height: 1px;
-      background: currentColor; opacity: 0.5;
-    }
-    .livros-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
-      font-weight: 400; color: var(--sky-700);
-      line-height: 1.15; margin-bottom: 16px;
-      letter-spacing: -0.012em;
-    }
-    .livros-title em { font-style: italic; color: var(--gold); }
-    .livros-lead {
-      max-width: 540px; margin: 0 auto;
-      font-size: 0.98rem; color: var(--text-mid);
-      line-height: 1.7;
-    }
-    .livros-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .livro-card {
-      background: var(--white, #fff);
-      border-radius: 14px;
-      padding: 28px;
-      border: 1px solid var(--border, rgba(0,0,0,0.06));
-      box-shadow: 0 4px 18px rgba(31,72,102,0.05);
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-    .livro-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 32px rgba(31,72,102,0.12);
-    }
-    .livro-cover {
-      width: 168px;
-      aspect-ratio: 2 / 3;
-      margin-bottom: 22px;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow:
-        0 1px 2px rgba(0,0,0,0.18),
-        0 12px 30px rgba(31,72,102,0.18);
-      background: #1a1a1a;
-    }
-    .livro-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .livro-num {
-      font-size: 0.66rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 10px;
-    }
-    .livro-name {
-      font-family: var(--font-display);
-      font-size: 1.18rem; font-weight: 600;
-      color: var(--sky-700); line-height: 1.28;
-      margin-bottom: 10px;
-    }
-    .livro-author {
-      font-size: 0.92rem; font-weight: 500;
-      color: var(--text-mid); margin-bottom: 4px;
-    }
-    .livro-edit { font-size: 0.82rem; color: var(--text-soft, #889); font-style: italic; }
-    @media (max-width: 600px) {
-      .livros-grid { grid-template-columns: 1fr; max-width: 360px; }
-      .livro-card { padding: 24px 22px; }
-      .livro-cover { width: 144px; }
-    }
-
-    /* AGENDA 2026 + ANJO — V1 Refino Sereno */
-    .section-agenda {
-      padding: clamp(80px, 10vw, 128px) 0;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(212,184,118,0.06) 0%, transparent 60%),
-        var(--bg, #fafbfc);
-    }
-    .agenda-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: clamp(40px, 5vw, 72px);
-      align-items: center;
-      margin-top: 56px;
-      max-width: 1080px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .agenda-img {
-      position: relative;
-     background: #fff;
-      border-radius: 14px;
-      padding: 28px;
-      border: 1px solid var(--border, rgba(0,0,0,0.06));
-      box-shadow: 0 8px 28px rgba(31,72,102,0.08);
-    }
-    .agenda-img img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .anjo-block {
-      position: relative;
-      padding-left: clamp(0px, 2vw, 24px);
-      text-align: center;
-    }
-    .anjo-mark {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: rgba(212,184,118,0.12);
-      color: var(--gold, #d4b876);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 22px;
-    }
-    .anjo-mark .ico { width: 24px; height: 24px; }
-    .anjo-eyebrow {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--gold, #d4b876);
-      margin-bottom: 14px;
-    }
-    .anjo-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-      font-weight: 400;
-      color: var(--sky-700);
-      line-height: 1.18;
-      margin-bottom: 22px;
-      letter-spacing: -0.012em;
-    }
-    .anjo-title em { font-style: italic; color: var(--gold, #d4b876); }
-    .anjo-desc {
-      font-size: 1.02rem;
-      line-height: 1.75;
-      color: var(--text-mid);
-      max-width: 520px;
-      margin-inline: auto;
-    }
-    .anjo-desc strong { color: var(--sky-700); font-weight: 600; }
-    .anjo-desc em { font-style: italic; color: var(--gold, #d4b876); font-weight: 500; }
-    @media (max-width: 880px) {
-      .agenda-grid { grid-template-columns: 1fr; gap: 48px; }
-      .agenda-img { max-width: 380px; margin: 0 auto; padding: 22px; }
-      .anjo-block { padding-left: 0; }
-    }
-    /* AGENDA — Lightbox (zoom) */
-    .agenda-img { cursor: zoom-in; }
-    .agenda-img-zoom-hint {
-      position: absolute; bottom: 14px; right: 14px;
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.55);
-      color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      backdrop-filter: blur(8px);
-      pointer-events: none;
-      transition: transform 0.3s ease, background 0.3s ease;
-      z-index: 2;
-    }
-    .agenda-img-zoom-hint svg { width: 16px; height: 16px; stroke: #fff; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .agenda-img:hover .agenda-img-zoom-hint { transform: scale(1.08); background: rgba(0,0,0,0.7); }
-
-    .lightbox {
-      position: fixed; inset: 0;
-      background: rgba(12, 18, 28, 0.92);
-      display: none;
-      align-items: center; justify-content: center;
-      z-index: 9999;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s ease;
-      padding: 32px;
-      cursor: zoom-out;
-    }
-    .lightbox.is-open {
-      display: flex;
-      opacity: 1; pointer-events: auto;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    .lightbox img {
-      max-width: min(95vw, 900px);
-      max-height: 92vh;
-      width: auto; height: auto;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-      transform: scale(0.96);
-      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
-    }
-    .lightbox.is-open img { transform: scale(1); }
-    .lightbox-close {
-      position: absolute; top: 24px; right: 24px;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
-    .lightbox-close svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
-    /* LIVROS — zoom no clique */
-    .livro-cover { cursor: zoom-in; transition: transform 0.3s ease; }
-    .livro-cover:hover { transform: scale(1.02); }
-
-    /* FOOTER — Instagram link */
-    .footer-ig {
-      color: var(--gold-deep, var(--gold-soft, #d4b876));
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      transition: opacity 0.2s;
-      display: inline-block;
-      margin-top: 6px;
-    }
-    .footer-ig:hover { opacity: 0.75; }
-
-
-
   </style>
 </head>
 <body>
@@ -1043,7 +690,7 @@
   <nav class="topbar" id="topbar" aria-label="Barra de navegação">
     <a href="#inicio" class="topbar-mark">
       <svg class="ico topbar-mark-cross" aria-hidden="true"><use href="#i-cross"/></svg>
-      <span class="topbar-mark-text">Consagra-te TTM</span>
+      <span class="topbar-mark-text">Consagração · Maristela</span>
     </a>
     <a href="#inscricao" class="topbar-cta">Inscrever-se</a>
   </nav>
@@ -1054,7 +701,8 @@
   <section class="hero" id="inicio">
     <div class="hero-left">
       <div class="hero-halo" aria-hidden="true"></div>
-      <img class="hero-img" src="../assets/logo.png" alt="Logo Consagra-te TTM — Totus Tuus" />
+      <img class="hero-img" src="../assets/nossa-senhora-carmo.jpg" alt="Imagem de Nossa Senhora do Carmo com o Menino Jesus" />
+      <div class="hero-left-fade" aria-hidden="true"></div>
     </div>
 
     <div class="hero-right">
@@ -1068,7 +716,7 @@
 
         <div class="hero-parish-chip anim-in anim-in-d1">
           <svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg>
-          <span class="hero-parish-chip-text">Consagra-te TTM · Totus Tuus</span>
+          <span class="hero-parish-chip-text">Igreja Maristela · Pres. Prudente</span>
         </div>
 
         <p class="hero-eyebrow anim-in anim-in-d2">Um ato de entrega e amor</p>
@@ -1077,22 +725,13 @@
           Consagração a<br/><em>Nossa Senhora</em>
         </h1>
 
-        <p class="hero-method anim-in anim-in-d3" data-method>Segundo o método de São Luís Maria Grignion de Montfort</p>
-
         <p class="hero-subtitle anim-in anim-in-d4">
           Entregue sua vida às mãos de Maria e deixe
           que ela a conduza ao coração de Jesus.
         </p>
 
-        <div class="hero-pills anim-in anim-in-d4">
-          <span class="hero-pill">
-            <svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg>
-            Online e gratuito
-          </span>
-        </div>
-
         <div class="hero-actions anim-in anim-in-d5">
-          <a href="#grupo" class="hero-cta-secondary">Saiba mais</a>
+          <a href="#sobre" class="hero-cta-secondary">Saiba mais</a>
           <a href="#inscricao" class="hero-cta">
             Quero me consagrar
             <svg aria-hidden="true"><use href="#i-arrow"/></svg>
@@ -1106,36 +745,6 @@
   <!-- ============================================================
        O QUE É
        ============================================================ -->
-  
-
-  <!-- SOBRE O GRUPO -->
-  <section class="section-grupo section-grupo--clean" id="grupo">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow reveal">Quem somos</p>
-        <h2 class="section-title reveal">O grupo <em>Consagra-te TTM</em></h2>
-        <p class="section-lead reveal">
-          Formado na Paróquia Nossa Senhora do Carmo, em Presidente Prudente/SP,
-          é composto por consagrados que professam seu amor pela Virgem Maria —
-          com a missão de propagar esta santa devoção a Nossa Senhora.
-        </p>
-      </div>
-
-      <div class="grupo-prose reveal">
-        <p>
-          Por isso queremos ajudar você a encontrar este <em>refúgio materno</em>
-          e, por este amor, ser guiado até Jesus.
-        </p>
-        <p>
-          Iremos auxiliar você durante todo o processo de consagração:
-          orientando sobre o método, tirando dúvidas e oferecendo
-          momentos de aprendizado e oração em comunidade.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
   <section class="section-about" id="sobre">
     <div class="container">
       <div class="section-header">
@@ -1162,11 +771,11 @@
 
         <div class="about-card reveal" style="transition-delay:.08s">
           <div class="about-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-crown"/></svg></div>
-          <p class="about-card-label">Devoção católica</p>
-          <h3 class="about-card-title">Reconhecida pela Igreja</h3>
+          <p class="about-card-label">Nossa Senhora do Carmo</p>
+          <h3 class="about-card-title">Padroeira do Carmelo</h3>
           <p class="about-card-text">
-            Vários Papas ao longo dos séculos destacaram esta devoção e
-            sua importância — com especial menção a <em>São João Paulo II</em>.
+            Celebrada em 16 de julho. Representada com o Menino Jesus e o
+            escapulário — sinal visível de consagração e proteção maternal.
           </p>
         </div>
 
@@ -1212,59 +821,23 @@
         <p class="section-eyebrow reveal">A preparação</p>
         <h2 class="section-title reveal">33 dias de <em>caminho espiritual</em></h2>
         <p class="section-lead reveal">
-          A preparação deve iniciar <strong>31 dias antes</strong> do dia da consagração.
-          O processo é composto por leituras, orações e reflexões interiores,
-          com a finalidade de conhecer a si mesmo, a Virgem Santíssima e Jesus Cristo.
+          A preparação tem início em <strong>16 de junho</strong> e se estende por 33 dias
+          de oração e aprofundamento espiritual. O ato solene de Consagração será
+          celebrado no <strong>16 de julho</strong>, Festa de Nossa Senhora do Carmo —
+          data especialmente escolhida para esse momento de entrega a Maria.
         </p>
       </div>
 
-      <div class="livros-block reveal">
-        <div class="livros-header">
-          <p class="livros-eyebrow">Materiais necessários</p>
-          <h3 class="livros-title">Os <em>dois livros</em> da preparação</h3>
-          <p class="livros-lead">
-            Para acompanhar os 31 dias, você precisará destas duas obras —
-            companheiras de oração e leitura ao longo de todo o caminho.
-          </p>
-        </div>
-        <div class="livros-grid">
-          <article class="livro-card">
-            <div class="livro-cover">
-              <img src="../assets/livro-tratado-verdadeira-devocao.jpg" alt="Capa do livro 'Tratado da Verdadeira Devoção à Santíssima Virgem'" loading="lazy" />
-            </div>
-            <div class="livro-info">
-              <p class="livro-num">1º Livro</p>
-              <h4 class="livro-name">Tratado da Verdadeira Devoção à Santíssima Virgem</h4>
-              <p class="livro-author">São Luís Maria Grignion de Montfort</p>
-              <p class="livro-edit">Disponível por qualquer editora</p>
-            </div>
-          </article>
-          <article class="livro-card">
-            <div class="livro-cover">
-              <img src="../assets/livro-exercicios-espirituais.jpg" alt="Capa do livro 'Exercícios Espirituais para a Total Consagração à Santíssima Virgem'" loading="lazy" />
-            </div>
-            <div class="livro-info">
-              <p class="livro-num">2º Livro</p>
-              <h4 class="livro-name">Exercícios Espirituais para a Total Consagração à Santíssima Virgem</h4>
-              <p class="livro-author">Pe. Rodrigo Maria</p>
-              <p class="livro-edit">Editora Opus Cordis Mariae</p>
-            </div>
-          </article>
-        </div>
-      </div>
-
       <div class="etapas-list">
-
         <div class="etapa reveal">
           <div class="etapa-number">1</div>
           <div class="etapa-content">
-            <p class="etapa-days">Dias 1 a 12 · Doze dias preliminares</p>
+            <p class="etapa-days">Dias 1 a 12</p>
             <h3 class="etapa-title">Desapego do espírito do mundo</h3>
             <p class="etapa-desc">
               Período de exame de consciência e purificação. O fiel reconhece
-              os apegos ao mundo que o distanciam de Deus.
-              <br/><br/>
-              <strong>Orações:</strong> <em>Saudação à Nossa Senhora</em> e <em>Oração ao Espírito Santo</em>.
+              os apegos que o distanciam de Deus e abre o coração para a
+              ação da graça. Orações: <em>Veni Creator</em> e <em>Ave Maris Stella</em>.
             </p>
           </div>
         </div>
@@ -1272,15 +845,12 @@
         <div class="etapa reveal">
           <div class="etapa-number">2</div>
           <div class="etapa-content">
-            <p class="etapa-days">Dias 13 a 18 · Primeira semana</p>
+            <p class="etapa-days">Dias 13 a 19</p>
             <h3 class="etapa-title">Conhecimento de si mesmo</h3>
             <p class="etapa-desc">
               Semana de autoconhecimento espiritual. O fiel reconhece a própria
-              fragilidade e a necessidade da graça divina, esforçando-se para
-              conquistar a humildade.
-              <br/><br/>
-              <strong>Orações:</strong> <em>Ladainha do Espírito Santo</em>,
-              <em>Ladainha de Nossa Senhora</em> e <em>Saudação à Nossa Senhora</em>.
+              fragilidade e a necessidade da graça divina, recitando a
+              Ladainha de Nossa Senhora.
             </p>
           </div>
         </div>
@@ -1288,15 +858,12 @@
         <div class="etapa reveal">
           <div class="etapa-number">3</div>
           <div class="etapa-content">
-            <p class="etapa-days">Dias 19 a 24 · Segunda semana</p>
-            <h3 class="etapa-title">Conhecimento da Santíssima Virgem</h3>
+            <p class="etapa-days">Dias 20 a 26</p>
+            <h3 class="etapa-title">Conhecimento de Nossa Senhora</h3>
             <p class="etapa-desc">
               Semana dedicada a conhecer mais profundamente Maria — sua vida,
               virtudes e papel na história da salvação. O devoto aprende a
               ver em Maria o caminho mais seguro para chegar a Jesus.
-              <br/><br/>
-              <strong>Orações:</strong> <em>Ladainha ao Espírito Santo</em>,
-              <em>Saudação à Nossa Senhora</em> e <em>Rosário ou Terço Mariano</em>.
             </p>
           </div>
         </div>
@@ -1304,11 +871,12 @@
         <div class="etapa reveal">
           <div class="etapa-number">4</div>
           <div class="etapa-content">
-            <p class="etapa-days">Dias 25 a 31 · Terceira semana</p>
+            <p class="etapa-days">Dias 27 a 33</p>
             <h3 class="etapa-title">Conhecimento de Jesus Cristo</h3>
             <p class="etapa-desc">
-              É a semana final. Jesus é o fim último da devoção à Virgem Maria —
-              e por isso, para amá-Lo como Ele merece, devemos conhecê-Lo melhor.
+              Semana final. O olhar se volta para Jesus, razão última da
+              consagração. Ao final, o fiel se confessa e comunga com a
+              intenção de se entregar a Cristo pelas mãos de Maria.
             </p>
           </div>
         </div>
@@ -1316,77 +884,65 @@
         <div class="etapa etapa--final reveal">
           <div class="etapa-number"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg></div>
           <div class="etapa-content">
-            <p class="etapa-days">Dia 31 · O Ato</p>
-            <h3 class="etapa-title">Dia da Consagração</h3>
+            <p class="etapa-days">34º Dia</p>
+            <h3 class="etapa-title">O Ato de Consagração</h3>
             <p class="etapa-desc">
-              Durante esses 31 dias o fiel deverá se confessar. No dia da
-              consagração, participar da missa em uma festa mariana e comungar
-              com a intenção de <em>se entregar a Cristo pelas mãos de Maria</em>.
-              Ao final da missa, lê-se o Ato de Consagração.
+              Em uma festa mariana, o fiel pronuncia solenemente o Ato de
+              Consagração. É o momento de dizer seu <em>"sim"</em> definitivo,
+              assim como Maria disse ao Anjo: <em>"Faça-se em mim segundo a tua palavra"</em> (Lc 1,38).
             </p>
           </div>
         </div>
-
-    </div>
-  </section>
-
-  <!-- AGENDA 2026 + ANJO -->
-  <section class="section-agenda" id="agenda">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow reveal">Agenda 2026</p>
-        <h2 class="section-title reveal">Datas das <em>consagrações</em></h2>
-        <p class="section-lead reveal">
-          Quatro consagrações ao longo do ano, cada uma dedicada a uma
-          devoção mariana específica. Escolha aquela que mais toca o seu coração.
-        </p>
-      </div>
-
-      <div class="agenda-grid">
-        <div class="agenda-img reveal">
-          <div class="agenda-img-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
-          <img src="../assets/agenda-2026.jpeg" alt="Agenda 2026 — Consagrações: Nossa Senhora de Fátima (12/04 a 13/05), Nossa Senhora do Carmo (15/06 a 16/07), Nossa Senhora Aparecida (12/09 a 12/10), Nossa Senhora das Graças (28/10 a 27/11)" loading="lazy" />
-        </div>
-
-        <div class="anjo-block reveal" style="transition-delay:.1s">
-          <div class="anjo-mark" aria-hidden="true">
-            <svg class="ico" aria-hidden="true"><use href="#i-rosary"/></svg>
-          </div>
-          <p class="anjo-eyebrow">Você não caminha sozinho</p>
-          <h3 class="anjo-title">Cada consagração tem o seu <em>anjo</em></h3>
-          <p class="anjo-desc">
-            Para cada grupo de consagração será criado um <strong>grupo no WhatsApp</strong>
-            com todos os participantes. Lá, cada pessoa receberá um <em>anjo</em> —
-            alguém que já é consagrado e que <strong>acompanhará você durante todo o processo</strong>,
-            auxiliando nas necessidades, esclarecendo dúvidas e orando por você ao longo
-            dos 31 dias.
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- CITAÇÃO 2 -->
+  <div class="quote-banner">
+    <div class="quote-content">
+      <div class="quote-banner-mark"></div>
+      <blockquote class="quote-text reveal">
+        O escapulário do Carmo, mais do que devoção, chama-nos à intimidade.
+        Quem vive perto de Nossa Senhora, invariavelmente vive perto de Jesus.
+      </blockquote>
+      <p class="quote-author reveal">Padre Carmelita — Canção Nova</p>
+    </div>
+  </div>
 
   <!-- DETALHES DO EVENTO -->
-    <section class="section-event" id="evento">
+  <section class="section-event" id="evento">
     <div class="container">
-      <div class="event-pillar reveal">
-        <span class="event-pillar-eyebrow">Como vai funcionar</span>
-        <h2 class="event-pillar-title">Durante a <em>consagração</em></h2>
-
-        <div class="event-pillar-rule" aria-hidden="true"></div>
-
-        <p class="event-pillar-text">
-          No processo haverão <strong>terços online</strong> e <em>momentos presenciais</em> para aqueles que puderem ir até a cidade de <strong>Presidente Prudente/SP</strong>.
+      <div class="section-header">
+        <p class="section-eyebrow reveal">O encontro</p>
+        <h2 class="section-title reveal">Detalhes <em>do evento</em></h2>
+        <p class="section-lead reveal">
+          A Igreja Maristela organiza este momento para reunir todos os que
+          desejam iniciar ou renovar sua Consagração a Nossa Senhora. O ato solene
+          acontecerá na Paróquia Nossa Senhora do Carmo, em Presidente Prudente,
+          conduzido pelo padre da paróquia, com orientação espiritual e oração comunitária.
         </p>
-        <p class="event-pillar-text">
-          E você poderá se consagrar <strong>na sua cidade</strong>, sem nenhuma barreira física, vivendo todo o processo de maneira online.
-        </p>
+      </div>
 
-        <div class="event-pillar-tags" aria-hidden="true">
-          <span class="event-pillar-tag"><svg class="ico" aria-hidden="true"><use href="#i-rosary"/></svg> Terços online</span>
-          <span class="event-pillar-tag"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Encontros em Pres. Prudente</span>
-          <span class="event-pillar-tag"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg> Da sua cidade</span>
+      <div class="event-grid">
+        <div class="event-card reveal">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg></div>
+          <p class="event-card-label">Início da preparação</p>
+          <p class="event-card-value">16 de Junho<br/>de 2026</p>
+        </div>
+        <div class="event-card event-card--highlight reveal" style="transition-delay:.08s">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg></div>
+          <p class="event-card-label">Dia da Consagração</p>
+          <p class="event-card-value">16 de Julho<br/>de 2026</p>
+        </div>
+        <div class="event-card reveal" style="transition-delay:.16s">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></div>
+          <p class="event-card-label">Local</p>
+          <p class="event-card-value" id="txt-local">Salão Paroquial</p>
+        </div>
+        <div class="event-card reveal" style="transition-delay:.24s">
+          <div class="event-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg></div>
+          <p class="event-card-label">Entrada</p>
+          <p class="event-card-value">Gratuita<br/>Vagas limitadas</p>
         </div>
       </div>
     </div>
@@ -1466,23 +1022,29 @@
           </div>
         </div>
 
-        <a class="receba-item receba-item--link reveal" style="transition-delay:.08s" href="../assets/manual_da_consagracao.pdf" download="Manual-da-Consagracao.pdf" target="_blank" rel="noopener">
+        <div class="receba-item reveal" style="transition-delay:.08s">
           <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg></div>
           <div>
-            <h3 class="receba-item-title">Manual da Consagração</h3>
-            <p class="receba-item-desc">Material guia com explicações sobre o que é a consagração, o método de São Luís de Montfort, as etapas dos 33 dias e orientações para viver esse caminho.</p>
-            <span class="receba-item-cta">Baixar PDF →</span>
+            <h3 class="receba-item-title">Material dos 33 dias</h3>
+            <p class="receba-item-desc">Roteiro de orações e meditações para acompanhar cada uma das 4 semanas de preparação.</p>
           </div>
-        </a>
+        </div>
 
         <div class="receba-item reveal" style="transition-delay:.16s">
           <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></div>
           <div>
             <h3 class="receba-item-title">Orientação espiritual</h3>
-            <p class="receba-item-desc">Acompanhamento durante toda a jornada com um anjo — uma pessoa designada para te acompanhar pessoalmente, além de encontros e oração comunitária.</p>
+            <p class="receba-item-desc">Acompanhamento durante toda a jornada com encontros e momentos de oração comunitária.</p>
           </div>
         </div>
 
+        <div class="receba-item reveal" style="transition-delay:.24s">
+          <div class="receba-item-ico"><svg class="ico" aria-hidden="true"><use href="#i-rosary"/></svg></div>
+          <div>
+            <h3 class="receba-item-title">Escapulário do Carmo</h3>
+            <p class="receba-item-desc">Imposição do escapulário no dia da consagração — sinal visível da entrega a Maria.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1492,8 +1054,8 @@
     <p class="footer-mark">Ave Maria</p>
     <div class="footer-divider"></div>
     <p class="footer-text">
-      <strong>Consagra-te TTM</strong><br/>
-      <a href="https://instagram.com/consagratettm" target="_blank" rel="noopener" class="footer-ig">@consagratettm</a>
+      <strong>Igreja Maristela</strong><br/>
+      Paróquia Nossa Senhora do Carmo · Presidente Prudente
     </p>
     <p class="footer-meta">© 2026 · Feito com devoção</p>
   </footer>
@@ -1510,9 +1072,12 @@
       ENTRY_TELEFONE: 'entry.2126048536',
       ENTRY_EMAIL:    'entry.317207993',
       WHATSAPP_LINK:  'https://chat.whatsapp.com/Dti0kkHvxHoKTjXNCrWsoK',
+      LOCAL:   'Salão Paroquial',
     };
 
     const FORMS_ACTION = `https://docs.google.com/forms/d/e/${CONFIG.FORM_ID}/formResponse`;
+    document.getElementById('txt-local').innerHTML = CONFIG.LOCAL;
+
     // Scroll reveal
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -1624,48 +1189,6 @@
       });
     });
   </script>
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="lightbox-close" type="button" aria-label="Fechar">
-      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
-    </button>
-    <img id="lightbox-img" alt="" />
-  </div>
-  <script>
-
-    // LIGHTBOX para imagem da agenda
-    (function(){
-      var lb = document.getElementById('lightbox');
-      var lbImg = document.getElementById('lightbox-img');
-      if (!lb || !lbImg) return;
-      var triggers = document.querySelectorAll('.agenda-img, .livro-cover');
-      function open(src, alt) {
-        lbImg.src = src; lbImg.alt = alt || '';
-        lb.classList.add('is-open');
-        lb.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      function close() {
-        lb.classList.remove('is-open');
-        lb.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        setTimeout(function(){ lbImg.removeAttribute('src'); }, 300);
-      }
-      triggers.forEach(function(t){
-        t.addEventListener('click', function(e){
-          var img = t.querySelector('img');
-          if (img) { e.preventDefault(); open(img.src, img.alt); }
-        });
-      });
-      lb.addEventListener('click', function(e){
-        if (e.target === lb || e.target.closest('.lightbox-close')) close();
-      });
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
-      });
-    })();
-  </script>
-
 
 </body>
 </html>
