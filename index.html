@@ -21,7 +21,8 @@
       justify-content: center;
       padding: 48px 24px;
       position: relative;
-      overflow: hidden;
+      /* overflow-x apenas — permite scroll vertical natural no mobile */
+      overflow-x: hidden;
     }
 
     /* Textura pontilhada */
@@ -288,9 +289,12 @@
 
     /* ── RESPONSIVO ── */
     @media (max-width: 580px) {
-      .grid       { grid-template-columns: 1fr; gap: 16px; }
-      .card       { padding: 28px 20px 24px; }
-      .card-name  { font-size: 1.35rem; }
+      /* No mobile, alinhar ao topo permite scroll quando o conteúdo é maior */
+      body          { justify-content: flex-start; padding: 32px 20px; }
+      .grid         { grid-template-columns: 1fr; gap: 16px; }
+      .card         { padding: 28px 20px 24px; }
+      .card-name    { font-size: 1.35rem; }
+      .subtitle     { margin-bottom: 36px; }
     }
   </style>
 </head>
